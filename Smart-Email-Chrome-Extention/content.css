@@ -1,0 +1,19 @@
+.ai-reply-button {
+  border-radius: 20px;
+  padding: 0 12px;
+  height: 36px;
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a73e8; /* Gmail blue */
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+
+/* Hover effect only for AI button */
+.ai-reply-button:hover {
+  background-color: #1669c1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
