@@ -15,7 +15,8 @@ public class EmailGeneratorController {
     private final EmailGeneratorService emailGeneratorService;
 
     // Blocking endpoint – returns full reply
-    @CrossOrigin(origins = "https://mail.google.com")
+
+    @CrossOrigin(origins = "*")
     @PostMapping("/email")
     public ResponseEntity<?> generateEmail(@RequestBody EmailRequest request) {
         String response = emailGeneratorService.generateEmailReply(request);
@@ -23,7 +24,7 @@ public class EmailGeneratorController {
     }
 
     // Streaming endpoint – returns chunks line by line via SSE
-    @CrossOrigin(origins = "https://mail.google.com")
+    @CrossOrigin(origins = "*")
     @PostMapping(value = "/email/stream", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<String> streamEmail(@RequestBody EmailRequest request) {
         return emailGeneratorService.streamEmailReply(request);
